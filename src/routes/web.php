@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloController;
+use App\Http\Controllers\Books;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,3 +16,4 @@ use App\Http\Controllers\HelloController;
 */
 
 Route::get('/', [HelloController::class, 'hello']);
+Route::get('/books', [Books::class, 'show']);
