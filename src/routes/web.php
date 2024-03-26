@@ -17,3 +17,4 @@ use App\Http\Controllers\Books;
 
 Route::get('/', [HelloController::class, 'hello']);
 Route::get('/books', [Books::class, 'show']);
+Route::get('/saluta/{nome}', 'App\Http\Controllers\SalutoController@salutaNome');

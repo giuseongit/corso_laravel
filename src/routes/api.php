@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Validations\ValidationException;
+use App\Http\Controllers\HelloController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +18,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+Route::post('/registrazione', function (Request $request) {
+    try {
+        $validato = $request->validate([
+            'nome' => 'required',
+            'email' => 'required|email',
+        ]);
+    } catch (Exception $e) {
+        return response()->json($e->getMessage(), 400);
+    }
+
+    // Simulazione di successo della validazione
+    return response()->json(['messaggio' => 'Registrazione completata con successo!']);
+
 });
