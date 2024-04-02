@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class SalutoController extends Controller
 {
-    public function salutaNome($nome): string
+    public function salutaNome($name): string
     {
-        return "Ciao, $nome!";
+        return "Ciao, $name!";
     }
 }
