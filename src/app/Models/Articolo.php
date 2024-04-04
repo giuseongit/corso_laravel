@@ -37,10 +37,10 @@ class Articolo extends Model
         $nuovoArticolo = [
             'id' => $nuovoId,
             'titolo' => $data['titolo'],
-            'testo' => $data['testo'] ?? 'requirec', // Assumendo che 'testo' sia opzionale
+            'testo' => $data['testo'] ?? 'require', // Assumendo che 'testo' sia opzionale
         ];
 
-     return $nuovoArticolo;
+        return $nuovoArticolo;
     }
 
 }

@@ -26,4 +26,5 @@ class StoreArticoloRequest extends FormRequest
             'testo' => 'required'
         ];
     }
+
 }
