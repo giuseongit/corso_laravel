@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4ceb6fe-d1fa-45db-a5c0-bc804416efcc" name="Changes" comment="chore(laravel): add skeleton app" />
+    <list default="true" id="c4ceb6fe-d1fa-45db-a5c0-bc804416efcc" name="Changes" comment="esercizio 2 salutaNome">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -207,7 +209,8 @@
       <workItem from="1711445699835" duration="2319000" />
       <workItem from="1711613401340" duration="330000" />
       <workItem from="1711613739600" duration="4466000" />
-      <workItem from="1712041819482" duration="415000" />
+      <workItem from="1712041819482" duration="3883000" />
+      <workItem from="1712300818215" duration="996000" />
     </task>
     <task id="LOCAL-00001" summary="chore(laravel): add skeleton app">
       <option name="closed" value="true" />
@@ -249,7 +252,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712041845032</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="esercizio 2 salutaNome">
+      <option name="closed" value="true" />
+      <created>1712043284241</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712043284241</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,7 +277,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="origin/Esercizio_2_Ferdinando_Garofalo" />
                       </list>
                     </value>
                   </entry>
@@ -280,6 +291,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="chore(laravel): add skeleton app" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore(laravel): add skeleton app" />
+    <MESSAGE value="esercizio 2 salutaNome" />
+    <option name="LAST_COMMIT_MESSAGE" value="esercizio 2 salutaNome" />
   </component>
 </project>
