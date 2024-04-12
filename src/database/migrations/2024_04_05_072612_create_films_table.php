@@ -11,11 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
+
+        Schema::create('registas', function (Blueprint $table) {
+            $table->id();
+            $table->string("nome", 100);
+            $table->timestamps();
+        });
+
         Schema::create('films', function (Blueprint $table) {
             $table->id();
             $table->string("titolo", 150);
             $table->text("trama")->nullable();
             $table->year("anno");
+            $table->foreignId('regista_id')->nullable()->constrained();
             $table->timestamps();
         });
     }
@@ -25,6 +33,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('films');
+        Schema::table('films', function (Blueprint $table) {
+            $table->dropForeign(['regista_id']);
+        });
+        Schema::dropIfExists('regista');
     }
 };

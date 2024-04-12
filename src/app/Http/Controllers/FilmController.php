@@ -56,11 +56,11 @@ class FilmController extends Controller
 
     private function showFilm(Film $film)
     {
-        //$registaNome = "unknown";
-//        $regista = $film->regista;
-//        if ($regista) {
-//            $registaNome = $regista->nome;
-//        }
+        $registaNome = "unknown";
+        $regista = $film->regista;
+        if ($regista) {
+            $registaNome = $regista->nome;
+        }
         return response()->json([
             'id' => $film->id,
             'titolo' => $film->titolo,
@@ -68,7 +68,7 @@ class FilmController extends Controller
             'anno' => $film->anno,
             'created_at' => $film->created_at,
             'updated_at' => $film->updated_at,
-            //'regista' => $registaNome
+            'regista' => $registaNome
         ]);
     }
 }

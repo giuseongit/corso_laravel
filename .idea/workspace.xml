@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4ceb6fe-d1fa-45db-a5c0-bc804416efcc" name="Changes" comment="esercizio 3.1 migration,model,controller,request films">
+    <list default="true" id="c4ceb6fe-d1fa-45db-a5c0-bc804416efcc" name="Changes" comment="crud films completed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Http/Controllers/FilmController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Http/Controllers/FilmController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/migrations/2024_04_05_072612_create_films_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2024_04_05_072612_create_films_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +214,7 @@
       <workItem from="1711613739600" duration="4466000" />
       <workItem from="1712041819482" duration="3883000" />
       <workItem from="1712300818215" duration="4124000" />
-      <workItem from="1712905634814" duration="1671000" />
+      <workItem from="1712905634814" duration="2720000" />
     </task>
     <task id="LOCAL-00001" summary="chore(laravel): add skeleton app">
       <option name="closed" value="true" />
@@ -281,7 +280,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712303509180</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="crud films completed">
+      <option name="closed" value="true" />
+      <created>1712907676081</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1712907676081</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,6 +321,7 @@
     <MESSAGE value="chore(laravel): add skeleton app" />
     <MESSAGE value="esercizio 2 salutaNome" />
     <MESSAGE value="esercizio 3.1 migration,model,controller,request films" />
-    <option name="LAST_COMMIT_MESSAGE" value="esercizio 3.1 migration,model,controller,request films" />
+    <MESSAGE value="crud films completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="crud films completed" />
   </component>
 </project>
