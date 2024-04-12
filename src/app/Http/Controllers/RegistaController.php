@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Registrazione;
-use App\Http\Requests\StoreFilmRequest;
-use App\Http\Requests\UpdateFilmRequest;
-use App\Models\Film;
+use App\Http\Requests\StoreRegistaRequest;
+use App\Http\Requests\UpdateRegistaRequest;
+use App\Models\Regista;
 
-class FilmController extends Controller
+class RegistaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,49 +15,48 @@ class FilmController extends Controller
     {
         return \response()->json([
             'success' => true,
-            'data' => Film::all(),
+            'data' => Regista::all(),
         ]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreFilmRequest $request)
+    public function store(StoreRegistaRequest $request)
     {
-        $film = Film::create(
+        $regista = Regista::create(
             $request->validated()
         );
 
         return \response()->json([
-            'data' => $film,
+            'data' => $regista,
         ]);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Film $film)
+    public function show(Regista $regista)
     {
-        return \response()->json($film);
+        return \response()->json($regista);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateFilmRequest $request, Film $film)
+    public function update(UpdateRegistaRequest $request, Regista $regista)
     {
         $valid = $request->validated();
-        $film->update($valid);
-        return $this->show($film);
+        $regista->update($valid);
+        return $this->show($regista);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Film $film)
+    public function destroy(Regista $regista)
     {
-        $film->delete();
+        $regista->delete();
         return response()->json(null, 204);
     }
-
 }

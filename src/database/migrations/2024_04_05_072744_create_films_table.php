@@ -18,6 +18,12 @@ return new class extends Migration
             $table->string('anno')->nullable();
             $table->timestamps();
         });
+
+        Schema::table('regista', function (Blueprint $table) {
+            $table->foreignId('regista_id')->nullable()->constrained();
+
+            $table->dropColumn('regista');
+        });
     }
 
     /**
@@ -25,6 +31,14 @@ return new class extends Migration
      */
     public function down()
     {
+
+        Schema::table('registas', function (Blueprint $table) {
+            $table->dropForeign(['regista_id']);
+
+            $table->text("regista")->nullable();
+        });
+
+
         Schema::dropIfExists('films');
     }
 };
