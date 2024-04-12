@@ -27,6 +27,7 @@ class StoreFilmRequest extends FormRequest
             'titolo' => 'required|max:150',
             'trama' => 'nullable',
             'anno' => 'required',
+            'regista_id' => 'required'
         ];
     }
 
