@@ -8,6 +8,6 @@ Route::resource('films', FilmController::class)->only([
     'index', 'store', 'show', 'update', 'destroy'
 ]);
 
-Route::resource('regista', RegistaController::class)->only([
+Route::resource('registas', RegistaController::class)->only([
     'index', 'store', 'show', 'update', 'destroy'
 ]);

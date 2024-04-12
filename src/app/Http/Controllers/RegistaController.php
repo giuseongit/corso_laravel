@@ -31,7 +31,7 @@ class RegistaController extends Controller
      */
     public function show(Regista $regista)
     {
-        return $this->showRegista($film);
+        return $this->showRegista($regista);
     }
 
     /**
