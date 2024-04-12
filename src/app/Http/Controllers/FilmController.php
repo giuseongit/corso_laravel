@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreFilmRequest;
 use App\Http\Requests\UpdateFilmRequest;
 use App\Models\Film;
+use Illuminate\Http\JsonResponse;
 
 class FilmController extends Controller
 {
@@ -31,7 +32,7 @@ class FilmController extends Controller
      */
     public function show(Film $film)
     {
-        //
+        return $this->showFilm($film);
     }
 
     /**
@@ -39,7 +40,9 @@ class FilmController extends Controller
      */
     public function update(UpdateFilmRequest $request, Film $film)
     {
-        //
+        $valid = $request->validated();
+        $film->update($valid);
+        return $this->showFilm($film);
     }
 
     /**
@@ -47,6 +50,25 @@ class FilmController extends Controller
      */
     public function destroy(Film $film)
     {
-        //
+        $film->delete();
+        return response()->json(null, 204);
+    }
+
+    private function showFilm(Film $film)
+    {
+        //$registaNome = "unknown";
+//        $regista = $film->regista;
+//        if ($regista) {
+//            $registaNome = $regista->nome;
+//        }
+        return response()->json([
+            'id' => $film->id,
+            'titolo' => $film->titolo,
+            'trama' => $film->trama,
+            'anno' => $film->anno,
+            'created_at' => $film->created_at,
+            'updated_at' => $film->updated_at,
+            //'regista' => $registaNome
+        ]);
     }
 }
