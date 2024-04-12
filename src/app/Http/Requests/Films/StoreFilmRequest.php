@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Films;
 
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Validation\Rule;
 
 class StoreFilmRequest extends FormRequest
 {
@@ -12,19 +13,23 @@ class StoreFilmRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'titolo' => [
+            'title' => [
                 'required',
                 'string',
                 'max:50',
             ],
-            'trama' => [
+            'description' => [
                 'nullable',
                 'string'
             ],
-            'anno' => [
+            'year' => [
                 'required',
                 'date_format:Y',
-            ]
+            ],
+            'director_id' => [
+                'nullable',
+                Rule::exists('directors', 'id'),
+            ],
         ];
     }
 
