@@ -25,8 +25,8 @@ class Film extends Model
     // ------------------
     //  Relationships
     // ------------------
-    public function films(): BelongsTo
+    public function author(): BelongsTo
     {
-        return $this->belongsTo(Film::class);
+        return $this->belongsTo(Author::class);
     }
 }
