@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Film;
 use Illuminate\Http\JsonResponse;
-use App\Http\Requests\StoreFilmRequest;
-use App\Http\Requests\UpdateFilmRequest;
+use App\Http\Requests\Film\StoreFilmRequest;
+use App\Http\Requests\Film\UpdateFilmRequest;
 use Symfony\Component\HttpFoundation\Response as HttpCode;
 
 class FilmController extends Controller

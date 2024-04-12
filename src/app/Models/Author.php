@@ -3,10 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Film extends Model
+class Author extends Model
 {
     use HasFactory;
 
@@ -16,17 +16,14 @@ class Film extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'title',
-        'author_id',
-        'description',
-        'release_year',
+        'name',
     ];
 
     // ------------------
     //  Relationships
     // ------------------
-    public function films(): BelongsTo
+    public function films(): HasMany
     {
-        return $this->belongsTo(Film::class);
+        return $this->hasMany(Film::class);
     }
 }

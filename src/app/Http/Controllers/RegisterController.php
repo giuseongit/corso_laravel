@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
-use App\Http\Requests\RegisterRequest;
+use App\Http\Requests\User\RegisterRequest;
 
 class RegisterController extends Controller
 {

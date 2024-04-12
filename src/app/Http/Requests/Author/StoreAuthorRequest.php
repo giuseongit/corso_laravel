@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Author;
 
 use App\Http\Requests\Abstracts\BaseRequest;
 use Illuminate\Contracts\Validation\ValidationRule;
 
-class UpdateFilmRequest extends BaseRequest
+class StoreAuthorRequest extends BaseRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -15,9 +15,7 @@ class UpdateFilmRequest extends BaseRequest
     public function rules(): array
     {
         return [
-            'title'        => ['nullable', 'string', 'max:50'],
-            'release_year' => ['nullable', 'date_format:Y'],
-            'description'  => ['nullable', 'string'],
+            'name' => ['required', 'string', 'max:50'],
         ];
     }
 }

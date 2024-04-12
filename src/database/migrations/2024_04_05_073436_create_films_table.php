@@ -18,6 +18,11 @@ return new class extends Migration {
             $table->text('description')
                 ->nullable();
 
+            $table->foreignId('author_id')
+                ->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+
             // ------------------
             //  Timestamps
             // ------------------
