@@ -6,8 +6,4 @@ use App\Http\Controllers\RegisterController;
 
 Route::post('registrazione', RegisterController::class);
 
-Route::apiResource('films', FilmController::class)
-    ->only([
-        'index',
-        'store',
-    ]);
+Route::apiResource('films', FilmController::class);
