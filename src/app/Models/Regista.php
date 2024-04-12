@@ -11,7 +11,7 @@ class Regista extends Model
     use HasFactory;
     protected $guarded = [];
 
-    public function regista(): HasMany
+    public function films(): HasMany
     {
         return $this->hasMany(Film::class);
     }
