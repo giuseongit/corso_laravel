@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('films', function (Blueprint $table) {
             $table->id();
-            $table->id();
             $table->string('titolo', 50);
             $table->text('trama')->nullable();
             $table->year('anno');

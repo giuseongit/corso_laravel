@@ -11,6 +11,13 @@ class Posts extends Model
     use HasFactory;
     protected $guarded = [];
 
+    protected $fillable = [
+        'author_id',
+        'titolo',
+        'corpo',
+        'autore'
+    ];
+
     public function author(): BelongsTo
     {
         return $this->belongsTo(Author::class);

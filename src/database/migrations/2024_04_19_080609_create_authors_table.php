@@ -32,7 +32,6 @@ return new class extends Migration
             $table->dropForeign(['author_id']);
             $table->text("autore")->nullable();
         });
-
         Schema::dropIfExists('authors');
     }
 };

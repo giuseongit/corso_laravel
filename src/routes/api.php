@@ -21,19 +21,28 @@ Route::post('/registrazione', function (Request $request) {
 
 // oppure definire una rotta base come risorsa ed elencare i metodi consentiti
 Route::resource('posts', PostsController::class)->only([
-    'index', 'store', 'show', 'update', 'destroy'
+    'index',
+    'store',
+    'show',
+    'update',
+    'destroy'
 ]);
 
-Route::controller(FilmController::class)->group(function(){
+Route::controller(FilmController::class)->group(function () {
     Route::get('/films', 'index');
     Route::post('/films', 'store');
 });
 
 
 Route::resource('author', AuthorController::class)->only([
-    'index', 'store', 'show', 'update', 'destroy'
+    'index',
+    'store',
+    'show',
+    'update',
+    'destroy'
 ]);
 
-Route::controller(AuthorController::class)->group(function(){
+Route::controller(AuthorController::class)->group(function () {
     Route::get('author/{author}/posts', 'posts');
 });
+
