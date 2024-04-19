@@ -11,8 +11,11 @@ class Author extends Model
     use HasFactory;
     protected $guarded = [];
 
+    protected $fillable = ['name'];
+
+
     public function posts(): HasMany
     {
-        return $this->hasMany(Posts::class);
+        return $this->hasMany(Post::class);
     }
 }

@@ -2,44 +2,58 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StorePostsRequest;
-use App\Http\Requests\UpdatePostsRequest;
-use App\Models\Posts;
+use App\Http\Requests\StorePostRequest;
+use App\Http\Requests\UpdatePostRequest;
+use App\Models\Post;
 
-class PostsController extends Controller
+class PostController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
-        // carica tutti gli elementi dal database
-        return Posts::all();
+        return Post::all();
     }
 
-    public function store(StorePostsRequest $request)
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(StorePostRequest $request)
     {
         $valid = $request->validated();
-        $p = Posts::create($valid);
+        $p = Post::create($valid);
         return response()->json($p, 201);
     }
 
-    public function show(Posts $post)
+    /**
+     * Display the specified resource.
+     */
+    public function show(Post $post)
     {
         return $this->showPost($post);
     }
 
-    public function update(UpdatePostsRequest $request, Posts $post)
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(UpdatePostRequest $request, Post $post)
     {
         $valid = $request->validated();
         $post->update($valid);
         return $this->showPost($post);
     }
 
-    public function destroy(Posts $post)
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Post $post)
     {
         $post->delete();
         return response()->json(null, 204);
     }
 
-    private function showPost(Posts $post)
+    private function showPost(Post $post)
     {
         $authorName = "unknown";
         $author = $post->author;
