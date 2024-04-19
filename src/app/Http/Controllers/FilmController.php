@@ -4,17 +4,26 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreFilmRequest;
 use App\Models\Film;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+
 
 class FilmController extends Controller
 {
-    public function index()
+    /**
+     * @return JsonResponse
+     */
+    public function index(): JsonResponse
     {
         $films = Film::all();
         return response()->json($films);
     }
 
-    public function store(StoreFilmRequest $request)
+    /**
+     * @param StoreFilmRequest $request
+     * @return JsonResponse
+     */
+    public function store(StoreFilmRequest $request): JsonResponse
     {
         $film = Film::create(
             $request->validated()
