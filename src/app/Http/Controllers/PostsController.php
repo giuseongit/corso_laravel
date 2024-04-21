@@ -23,13 +23,19 @@ class PostsController extends Controller
 
     public function show(Posts $post)
     {
+        return response()->json($post);
     }
 
     public function update(UpdatePostsRequest $request, Posts $post)
     {
+        $validated = $request->validated();
+        $post->update($validated);
+        return response()->json($post);
     }
 
     public function destroy(Posts $post)
     {
+        $post->delete();
+        return response()->json(null, 204);
     }
 }
