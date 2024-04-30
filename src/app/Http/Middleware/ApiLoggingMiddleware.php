@@ -24,7 +24,11 @@ class ApiLoggingMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         //Passo i dati del middleware a logRequest metodo di ApiLogger class
-        $this->apiLogger->logRequest($request->url(), $request->getMethod(), $request->all());
+        $this->apiLogger->logRequest(
+            $request->url(),
+            $request->getMethod(),
+            $request->all()
+        );
 
         return $next($request);
     }
