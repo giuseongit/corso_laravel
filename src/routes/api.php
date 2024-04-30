@@ -1,15 +1,31 @@
 <?php
 
-use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DirectorController;
 use App\Http\Controllers\FilmController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Laravel\Fortify\Contracts\LogoutResponse;
+use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
+use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 
-Route::middleware('api.log')->group(function () {
+Route::middleware(['api.log', 'auth:sanctum'])->group(function () {
     /**
      * AUTH
      */
-    Route::post('/registrazione', [AuthController::class, 'register']);
+    Route::withoutMiddleware('auth:sanctum')->group(function () {
+        Route::post('/login', [AuthenticatedSessionController::class, 'store'])
+            ->middleware(array_filter([
+                'guest:' . config('fortify.guard'),  // solo gli utenti non autenticati possono accedere a questa rotta
+            ]));
+
+        Route::post('/register', [RegisteredUserController::class, 'store'])
+            ->middleware('guest:' . config('fortify.guard'));  // solo gli utenti non autenticati possono accedere a questa rotta
+    });
+
+    Route::get('/logout', function (Request $request) {
+        $request->user()->tokens()->delete();
+        return app(LogoutResponse::class);
+    });
 
     /**
      * FILMS
