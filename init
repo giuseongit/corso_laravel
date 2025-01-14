@@ -1,0 +1,3 @@
+#!/bin/bash
+
+mkdir src || true && mkdir mysql && docker compose build
